@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/teacher_home"
+    tools:context=".Date_picker">
+
+    <TextView
+        android:id="@+id/current_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Date : "
+        android:textStyle="bold"
+        android:textSize="50dp"
+        >
+
+    </TextView>
+
+    <Button
+        android:id="@+id/select"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        >
+
+    </Button>
+
+    <DatePicker
+        android:id="@+id/date_pick"
+
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+    </DatePicker>
+
+
+
+</LinearLayout>

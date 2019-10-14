@@ -37,7 +37,7 @@
         android:layout_marginTop="20dp"
         android:id="@+id/change_time"
         android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:text="Routine"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -49,7 +49,7 @@
         android:layout_marginTop="20dp"
         android:id="@+id/change_time"
         android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:text="Extra Class"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -61,10 +61,23 @@
         android:layout_marginTop="20dp"
         android:id="@+id/change_time"
         android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:text="Cancel Class"
         android:textSize="20dp"
         android:textStyle="bold"
+        >
+
+    </Button>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/pick_date"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:text="Exams"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
         >
 
     </Button>

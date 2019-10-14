@@ -41,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                     startActivity(intent);
                 }
+
+                else if(usernames.equals("student" ) && passw.equals("5678")){
+                    Intent intent = new Intent(MainActivity.this, SecondActivityStudent.class);
+                    startActivity(intent);
+                }
+
                 else{
                     counter--;
                     textView.setText("Number of attempts remaining : " + counter);
