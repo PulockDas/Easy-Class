@@ -10,7 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SecondActivityStudent"></activity>
+        <activity android:name=".Teacher_3rd_Activity.CancelClass"></activity>
+        <activity android:name=".Teacher_3rd_Activity.Extra_Class" />
+        <activity android:name=".Teacher_3rd_Activity.Routine" />
+        <activity android:name=".SecondActivityStudent" />
         <activity android:name=".Date_picker" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity">
