@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Current Date : "
         android:textStyle="bold"
-        android:textSize="50dp"
+        android:textSize="30dp"
         >
 
     </TextView>
