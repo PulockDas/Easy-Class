@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Teacher_3rd_Activity.announcement"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background"
+    >
+
+    <EditText
+        android:id="@+id/courseid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Course: "
+        />
+
+    <EditText
+        android:id="@+id/announce"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:hint="Type Announcement: "
+          />
+
+    <EditText
+        android:id="@+id/dateid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Date: "
+        />
+
+    <Button
+        android:id="@+id/annsub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+</LinearLayout>

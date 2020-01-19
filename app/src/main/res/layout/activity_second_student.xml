@@ -9,10 +9,10 @@
     tools:context=".SecondActivityStudent">
 
     <TextView
+        android:id="@+id/secactst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Notifications"
-        android:textSize="30dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#9E5454"
         >

@@ -3,14 +3,19 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.example.teacher">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Teacher_3rd_Activity.CancelClass"></activity>
+        <activity android:name=".Teacher_3rd_Activity.announcement"></activity>
+        <activity android:name=".RegisterPackage.Register" />
+        <activity android:name=".Teacher_3rd_Activity.CancelClass" />
         <activity android:name=".Teacher_3rd_Activity.Extra_Class" />
         <activity android:name=".Teacher_3rd_Activity.Routine" />
         <activity android:name=".SecondActivityStudent" />

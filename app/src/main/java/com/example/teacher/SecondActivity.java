@@ -1,71 +1,66 @@
 package com.example.teacher;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.NestedScrollView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TextView;
 
-import com.example.teacher.Teacher_3rd_Activity.CancelClass;
-import com.example.teacher.Teacher_3rd_Activity.Extra_Class;
-import com.example.teacher.Teacher_3rd_Activity.Routine;
+import com.example.teacher.Teacher_3rd_Activity.*;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private Button exams;
+    /*private Button exams;
     private Button routine;
     private Button extra_class;
     private Button cancel_class;
-
+*/
+    public static String name ;
+    TextView Name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        exams = (Button) findViewById(R.id.pick_date);
-        routine = (Button) findViewById(R.id.change_time);
-        extra_class = (Button) findViewById(R.id.extraClass);
-        cancel_class = (Button) findViewById(R.id.cancelClass);
+        Name = findViewById(R.id.name);
+        Name.setText(name);
 
 
+    }
 
-        exams.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.teacher_options, menu);
+        return true;
+    }
 
-                Intent intent2 = new Intent(SecondActivity.this, Date_picker.class);
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        Intent intent2;
+        switch (item.getItemId()) {
+            case R.id.routine:
+                intent2 = new Intent(SecondActivity.this, Routine.class);
                 startActivity(intent2);
-            }
-        });
+                return true;
 
-        routine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent2 = new Intent(SecondActivity.this, Routine.class);
+            case R.id.updateid:
+                intent2 = new Intent(SecondActivity.this, announcement.class);
                 startActivity(intent2);
-            }
-        });
+                return true;
 
-        extra_class.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent2 = new Intent(SecondActivity.this, Extra_Class.class);
-                startActivity(intent2);
-            }
-        });
-
-        cancel_class.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent2 = new Intent(SecondActivity.this, CancelClass.class);
-                startActivity(intent2);
-            }
-        });
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
