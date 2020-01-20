@@ -18,11 +18,8 @@ import com.example.teacher.Teacher_3rd_Activity.*;
 
 public class SecondActivity extends AppCompatActivity {
 
-    /*private Button exams;
-    private Button routine;
-    private Button extra_class;
-    private Button cancel_class;
-*/
+
+
     public static String name ;
     TextView Name;
 
@@ -33,6 +30,7 @@ public class SecondActivity extends AppCompatActivity {
 
         Name = findViewById(R.id.name);
         Name.setText(name);
+
 
 
     }

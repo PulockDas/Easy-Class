@@ -17,19 +17,30 @@
         android:hint="Course: "
         />
 
+
     <EditText
         android:id="@+id/announce"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:hint="Type Announcement: "
-          />
+        android:hint="Announcement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:overScrollMode="always"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:lines="6"
+        android:layout_margin="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:scrollHorizontally="false" />
 
     <EditText
         android:id="@+id/dateid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Date: "
-        />
+        >
+</EditText>
 
     <Button
         android:id="@+id/annsub"

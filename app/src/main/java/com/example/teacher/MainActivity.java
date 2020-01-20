@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
     public static String type;
 
     String loginUrl = "http://192.168.31.119/EasyClass/Login.php";
-    private int counter = 5;
+    public static String regurl = "http://192.168.31.119/EasyClass/Register.php";
+
+    //private int counter = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +56,13 @@ public class MainActivity extends AppCompatActivity {
         textreg = (TextView) findViewById(R.id.textregId);
         radioGroup = (RadioGroup)findViewById(R.id.user_typeid);
 
-        //textView = (TextView) findViewById(R.id.textId);
+        SharedPreferences sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
 
-        //textView.setText("Number of attempts remaining : 5");
+        if(sharedPreferences.contains("Email") && sharedPreferences.contains("password")){
+            username.setText(sharedPreferences.getString("Email","nothing"));
+            password.setText(sharedPreferences.getString("Password","nothing"));
+        }
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,19 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 String email = username.getText().toString().trim();
                 String passw = password.getText().toString().trim();
 
-                login(getApplicationContext(),email, passw);
+                login(getApplicationContext(),type, email, passw);
 
-
-
-
-
-//                else{
-//                    counter--;
-//                    textView.setText("Number of attempts remaining : " + counter);
-//
-//                    if(counter == 0)
-//                        login.setEnabled(false);
-//                }
 
             }
 
@@ -97,9 +93,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
     }
 
-    public void login(final Context context, final String email, final String pass){
+    public void login(final Context context,final String type, final String email, final String pass){
 
 
 
@@ -109,12 +106,22 @@ public class MainActivity extends AppCompatActivity {
                 try {
 
                     String info[] = response.toString().trim().split("\n");
-                    Toast.makeText(getApplicationContext(), info[0],Toast.LENGTH_SHORT).show();
-                    if(info[0].equals("Welcome")){
+                    Toast.makeText(getApplicationContext(), response.toString().trim(),Toast.LENGTH_SHORT).show();
+                    if(info[0].equals("Welcome") && type.equals("Teacher")){
+                        savelogin(email, pass);
                         Intent intent = new  Intent(context,SecondActivity.class);
                         SecondActivity.name = info[1];
                         startActivity(intent);
                     }
+                    else if(info[0].equals("Welcome") && type.equals("Student")){
+
+                        savelogin(email, pass);
+
+                        Intent intent = new  Intent(context,SecondActivityStudent.class);
+                        SecondActivity.name = info[1];
+                        startActivity(intent);
+                    }
+
                     JSONObject jsonObject = new JSONObject(response);
                     Toast.makeText(context,jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
 
@@ -122,6 +129,13 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
+            }
+
+            private void savelogin(String email, String password) {
+                SharedPreferences.Editor editor = getSharedPreferences("login", MODE_PRIVATE).edit();
+                editor.putString("Email",email);
+                editor.putString("Password", password);
+                editor.apply();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -142,9 +156,5 @@ public class MainActivity extends AppCompatActivity {
         };
 
         MySingleton.getInstance(context).addToRequestQueue(stringRequest);
-
     }
-
-
-
 }
