@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#E9EBEE"
+    android:background="#AFB1B4"
     tools:context=".SecondActivityStudent">
 
 
@@ -13,7 +13,7 @@
 
         <WebView
             android:id="@+id/noti"
-            android:background="#ffff"
+            android:background="#FFFFFF"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
