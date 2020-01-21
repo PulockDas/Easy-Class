@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -29,9 +32,12 @@ import java.util.Map;
 
 public class announcement extends AppCompatActivity implements View.OnClickListener {
 
+    String[] allcourses;
+    Spinner spinner;
     public String str;
     public Button button;
-    public EditText editText, course, date;
+    public TextView course;
+    public EditText editText, date;
     public String url = "http://192.168.31.119/EasyClass/Announcement.php";
 
     @Override
@@ -39,11 +45,15 @@ public class announcement extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_announcement);
 
+        spinner = (Spinner) findViewById(R.id.courses);
+        allcourses = getResources().getStringArray(R.array.courses);
         button = (Button) findViewById(R.id.annsub);
         editText = (EditText) findViewById(R.id.announce);
-        course = (EditText) findViewById(R.id.courseid);
+        course = (TextView) findViewById(R.id.courseid);
         date = (EditText) findViewById(R.id.dateid);
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.sample_view, R.id.textViewId, allcourses);
+        spinner.setAdapter(adapter);
 
         button.setOnClickListener(this);
     }
@@ -51,7 +61,7 @@ public class announcement extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.annsub) {
-            String courses = course.getText().toString().trim();
+            String courses = spinner.getSelectedItem().toString().trim();
             String announces = editText.getText().toString().trim();
             String dates = date.getText().toString().trim();
 

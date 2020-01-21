@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">Easy Class</string>
-    <string name="about">Rafi Sir is a new edition of modern teachers.
-    He is calm and cheerful. He joined IICT in 2018. Now everyone likes him.</string>
+    <string-array name="courses">
+        <item>Database Management</item>
+        <item>Computer Networking</item>
+        <item>Computer Networking Lab</item>
+        <item>Management Information</item>
+        <item>Distributed System</item>
+        <item>Distributed System Lab</item>
+        <item>SADP</item>
+        <item>SADPL</item>
+    </string-array>
 
 </resources>

@@ -21,6 +21,7 @@ import com.example.teacher.MainActivity;
 import com.example.teacher.MySingleton;
 import com.example.teacher.R;
 import com.example.teacher.SecondActivity;
+import com.example.teacher.SecondActivityStudent;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -79,11 +80,17 @@ public class Register extends AppCompatActivity {
 
                     String info[] = response.toString().trim().split("\n");
                     Toast.makeText(getApplicationContext(), info[0],Toast.LENGTH_SHORT).show();
-                    if(info[0].equals("Welcome")){
+                    if(info[0].equals("successfull") && type2.equals("Teacher")){
+
                         Intent intent = new  Intent(context, SecondActivity.class);
-                        SecondActivity.name = info[1];
                         startActivity(intent);
                     }
+                    else if(info[0].equals("successfull") && type2.equals("Student")){
+
+                        Intent intent = new  Intent(context, SecondActivityStudent.class);
+                        startActivity(intent);
+                    }
+
                     JSONObject jsonObject = new JSONObject(response);
                     Toast.makeText(context,jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
 

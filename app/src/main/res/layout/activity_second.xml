@@ -21,7 +21,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="Quazi Istiaque Mohammad Rafi"
         android:textStyle="bold"
         ></TextView>
     <TextView
@@ -33,24 +32,6 @@
         android:layout_marginBottom="50dp"
         ></TextView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:text="About"
-        android:textColor="@color/colorAccent"
-        android:textStyle="bold"
-        ></TextView>
-
-    <TextView
-        android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:text="@string/about"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        ></TextView>
 </LinearLayout>
 
 

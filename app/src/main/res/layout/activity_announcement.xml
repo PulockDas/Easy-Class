@@ -10,12 +10,21 @@
     android:background="@drawable/background"
     >
 
-    <EditText
+    <TextView
         android:id="@+id/courseid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Course: "
-        />
+        android:text="Select Course"
+        android:layout_marginRight="30dp"
+        android:textStyle="bold"
+        ></TextView>
+
+    <Spinner
+        android:id="@+id/courses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        ></Spinner>
 
 
     <EditText
@@ -36,6 +45,7 @@
 
     <EditText
         android:id="@+id/dateid"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Date: "
