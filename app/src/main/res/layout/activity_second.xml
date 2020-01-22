@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/teacher_home"
+    android:background="#fff"
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".SecondActivity">
@@ -20,13 +20,13 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textStyle="bold"
         ></TextView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:text="Lecturer of IICT"
         android:textStyle="bold"
         android:layout_marginBottom="50dp"

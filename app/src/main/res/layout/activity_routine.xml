@@ -4,6 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#242121"
     tools:context=".Teacher_3rd_Activity.Routine">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:src="@mipmap/routine"
+        android:id="@+id/image"
+        ></ImageView>
 
 </LinearLayout>

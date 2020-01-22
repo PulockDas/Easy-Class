@@ -8,11 +8,15 @@
 
     <item
         android:id="@+id/updateid"
-        android:title="Announcement">
+        android:title="Update Announcement">
 
     </item>
 
+    <item
+        android:id="@+id/seepostid"
+        android:title="See Announcements">
 
+    </item>
 
 
 </menu>

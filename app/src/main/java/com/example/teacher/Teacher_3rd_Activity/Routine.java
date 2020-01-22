@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.webkit.WebView;
+import android.widget.ImageView;
 
 import com.example.teacher.R;
 import com.example.teacher.SecondActivity;
 
+import uk.co.senab.photoview.PhotoViewAttacher;
+
 public class Routine extends AppCompatActivity {
-    WebView webView;
+    ImageView imageView;
 
 
 
@@ -19,6 +22,9 @@ public class Routine extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_routine);
 
+        imageView = (ImageView) findViewById(R.id.image);
+        PhotoViewAttacher photoView = new PhotoViewAttacher(imageView);
 
+        photoView.update();
     }
 }

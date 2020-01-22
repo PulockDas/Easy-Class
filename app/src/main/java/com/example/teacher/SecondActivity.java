@@ -18,8 +18,6 @@ import com.example.teacher.Teacher_3rd_Activity.*;
 
 public class SecondActivity extends AppCompatActivity {
 
-
-
     public static String name ;
     TextView Name;
 
@@ -30,8 +28,6 @@ public class SecondActivity extends AppCompatActivity {
 
         Name =(TextView) findViewById(R.id.name);
         Name.setText(name);
-
-
 
     }
 
@@ -54,6 +50,11 @@ public class SecondActivity extends AppCompatActivity {
 
             case R.id.updateid:
                 intent2 = new Intent(SecondActivity.this, announcement.class);
+                startActivity(intent2);
+                return true;
+
+            case R.id.seepostid:
+                intent2 = new Intent(SecondActivity.this, SecondActivityStudent.class);
                 startActivity(intent2);
                 return true;
 

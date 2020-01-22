@@ -19,6 +19,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.teacher.Date_picker;
 import com.example.teacher.MySingleton;
 import com.example.teacher.R;
 import com.example.teacher.SecondActivity;
@@ -50,23 +51,29 @@ public class announcement extends AppCompatActivity implements View.OnClickListe
         button = (Button) findViewById(R.id.annsub);
         editText = (EditText) findViewById(R.id.announce);
         course = (TextView) findViewById(R.id.courseid);
-        date = (EditText) findViewById(R.id.dateid);
+        date = (EditText) findViewById(R.id.dateShowid);
+        //datePick = (TextView) findViewById(R.id.dateid);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.sample_view, R.id.textViewId, allcourses);
         spinner.setAdapter(adapter);
 
+        //datePick.setOnClickListener(this);
         button.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.annsub) {
-            String courses = spinner.getSelectedItem().toString().trim();
-            String announces = editText.getText().toString().trim();
-            String dates = date.getText().toString().trim();
+        String courses, announces, dates;
 
-            anno(getApplicationContext(), courses, announces, dates);
-        }
+        courses = spinner.getSelectedItem().toString().trim();
+        announces = editText.getText().toString().trim();
+        dates = date.getText().toString().trim();
+
+        anno(getApplicationContext(), courses, announces, dates);
+
+        Intent intent = new Intent(announcement.this, SecondActivityStudent.class);
+        startActivity(intent);
+
     }
 
     public void anno(final Context context, final String courses, final String anno, final String dates){
